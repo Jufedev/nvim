@@ -14,11 +14,3 @@ vim.keymap.set("n", "N", "Nzzzv") -- Anterior coincidencia de busqueda
 vim.keymap.set("x", "<leader>p", [["_dP]]) -- Pegar sin reemplazar lo que tenia anteriormente copeado
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- Copear en la papelera del pc
 
-vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format) -- Buscar archivo de config
-
-
--- navigate quickfix
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
