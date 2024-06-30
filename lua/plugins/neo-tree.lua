@@ -10,16 +10,12 @@ return {
 		{
 			event = "file_opened",
 			handler = function(file_path)
-				-- auto close
-				-- vimc.cmd("Neotree close")
-				-- OR
 				require("neo-tree.command").execute({ action = "close" })
 			end
 		},
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>rf", ":Neotree filesystem reveal right<CR>", {})
-		vim.keymap.set("n", "<leader>rt", ":Neotree toggle<CR>", {})
-		
+		vim.keymap.set("n", "<leader>re", ":Neotree current reveal right<CR>", {})
+		vim.keymap.set("n", "<leader>rt", ":Neotree close<CR>", {})
 	end,
 }

@@ -1,9 +1,21 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+local global = vim.g
+local o = vim.o
 
-vim.g.mapleader = " "
+global.mapleader = " "
+global.loaded_netrw = 1
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Editor options
+o.number = true
+o.relativenumber = true
+o.syntax = "on"
+o.autoindent = true
+o.expandtab = true
+o.shiftwidth = 2
+o.tabstop = 2
+o.encoding = "UTF-8"
+o.title = true
+o.hidden = true
+o.ttimeoutlen = 0
+o.wildmenu = true
+o.showmatch = true
+o.termguicolors = true
