@@ -13,7 +13,6 @@ return {
         }),
         require("none-ls.diagnostics.eslint"),
         null_ls.builtins.formatting.pyink,
-        null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.csharpier,
       },
     })

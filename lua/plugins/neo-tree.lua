@@ -15,7 +15,7 @@ return {
 		},
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>re", ":Neotree current reveal right<CR>", {})
-		vim.keymap.set("n", "<leader>rt", ":Neotree close<CR>", {})
+		vim.keymap.set("n", "<leader>rt", ":Neotree current reveal right<CR>", {})
+		vim.keymap.set("n", "<leader>re", ":Neotree close<CR>", {})
 	end,
 }
