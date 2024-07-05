@@ -26,9 +26,9 @@ return {
       lspconfig.basedpyright.setup({ capabilities = capabilities })
       lspconfig.csharp_ls.setup({ capabilities = capabilities })
 
-      vim.keymap.set("n", "<leader>df", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>rf", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, {})
     end,
   },
 }

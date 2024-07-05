@@ -11,23 +11,27 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")	-- Clear search
 map("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
-map("n", "<leader>q", ":bd<CR>")
+map("n", "<leader>q", "<CMD>q<CR>")
 map("n", "<leader>qq", "<CMD>q!<CR>")
 
 -- Exit insert mode
 map("i", "jk", "<ESC>")
 
--- Window Navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-l>", "<C-w>l")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-j>", "<C-w>j")
+-- Open windows
+map("n", "<leader>sv", ":split<CR>")
+map("n", "<leader>sh", ":vsplit<CR>")
 
 -- Resize Windows
 map("n", "<C-Left>", "<C-w><")
 map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
+
+-- Window Navigation without tmux
+--[[ map("n", "<C-h>", "<C-w>h")
+map("n", "<C-l>", "<C-w>l")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-j>", "<C-w>j") ]]
 
 -- Buffers with tabs
 -- map("n", "bq", ":BufferLineCloseOthers<CR>")

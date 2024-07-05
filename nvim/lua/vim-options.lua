@@ -4,7 +4,6 @@ local o = vim.o
 global.mapleader = " "
 global.loaded_netrw = 1
 
--- Editor options
 o.number = true
 o.relativenumber = true
 o.syntax = "on"
