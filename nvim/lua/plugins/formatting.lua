@@ -11,12 +11,11 @@ return {
         null_ls.builtins.formatting.prettier.with({
           filetypes = { "html", "css", "json", "yaml", "markdown", "javascript", "javascriptreact", "typescript", "typescriptreact", },
         }),
-        require("none-ls.diagnostics.eslint"),
-        null_ls.builtins.formatting.pyink,
+        null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.csharpier,
       },
     })
 
-    vim.keymap.set("n", "<leader>fc", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {})
   end,
 }
