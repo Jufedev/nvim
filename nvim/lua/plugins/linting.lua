@@ -28,6 +28,8 @@ return {
           "cssmodules_ls",
           "basedpyright",
           "csharp_ls",
+          "angularls",
+          "tsserver",
         },
       })
   
@@ -54,6 +56,8 @@ return {
       lspconfig.cssmodules_ls.setup({ capabilities = capabilities })
       lspconfig.basedpyright.setup({ capabilities = capabilities })
       lspconfig.csharp_ls.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({ capabilities = capabilities })
+      lspconfig.angularls.setup({})
 
       vim.keymap.set("n", "C", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references, {})
