@@ -20,19 +20,7 @@ wsl --set-default-version 2
 ## _Lo primero que hay que hacer al instalar Linux_
 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install build-essential
-```
-
----
-
-## _Instalación de brew_
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/YourUserName/.bashrc
+sudo apt-get update && apt-get upgrade
 ```
 
 ---
@@ -40,9 +28,8 @@ sudo apt-get install build-essential
 ## _Dependencias necesarias_
 
 ```bash
-brew install gcc
-brew install git
-brew install nvim
+apt install gcc
+apt install neovim
 ```
 
 ---
@@ -52,7 +39,7 @@ brew install nvim
 ### _Instalación_
 
 ```bash
-brew install tmux
+apt install tmux
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
@@ -136,7 +123,7 @@ _Añadir la siguiente ruta para reemplazar la terminal por defecto con TMUX_
 ## _Clonar mi configuración de nvim_
 
 ```bash
-git clone https://github.com/Jufedev/nvim ~/.config/nvim
+git clone https://github.com/Jufedev/nvim ~/.config/
 ```
 
 ---
