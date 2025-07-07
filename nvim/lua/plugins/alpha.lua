@@ -25,7 +25,7 @@ return {
       dashboard.button("f", "󰈞    Find File", ":Telescope find_files <CR>"),
       dashboard.button("g", "    New File", "<cmd>ene <CR>"),
       dashboard.button("r", "󱋡    Recent Files", ":Telescope oldfiles <CR>"),
-      dashboard.button("c", "    Config", ":e D:\\neovim\\nvim\\init.lua <CR>"),
+      dashboard.button("c", "    Config", ":e ~/.config/nvim/init.lua <CR>"),
       dashboard.button("q", "󰩈    Quit", ":qa <CR>"),
     }
     dashboard.section.buttons.opts = {
