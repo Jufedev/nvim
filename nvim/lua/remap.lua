@@ -2,7 +2,7 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-vim.keymap.set("v", "J", ":m '>+3<CR>gv=gv") -- Mover areas sombreada abajo
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Mover areas sombreada abajo
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Mover areas sombreada arriba
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")	-- Clear search
