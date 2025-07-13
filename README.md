@@ -17,123 +17,23 @@ wsl --set-default-version 2
 
 ---
 
-## _Lo primero que hay que hacer al instalar Linux_
+### _Instalación_ 
+
+- En mi caso se instalara Tmux, Python, Npm y Fzf.
+
+- Se debe copear el script de instalacion (Compatible unicamente con arch Linux) y ejecutralo.
+
+- Una vez terminada su ejecucion se debe insertar el siguiente comando:
 
 ```bash
-sudo apt-get update && apt-get upgrade
+source ~/.bashrc
 ```
+
+- Ya dentro de TMUX se debe instalar los pluggins de este, para ello hay que presionar prefix (en mi caso control s) + shift i
+
+- Por ultimo ejecutamos nvim y con :Mason podemos ver el progreso de los lenguajes (Linters, formatters, etc)
 
 ---
-
-## _Dependencias necesarias_
-
-```bash
-apt install gcc
-apt install neovim
-```
-
----
-
-## _TMUX_
-
-### _Instalación_
-
-```bash
-apt install tmux
-
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-### _Configuracion_
-
-```bash
-nvim ~/.tmux.conf
-
-tmux
-```
-
-### _Instalación de plugins_ prefix (en mi caso control s) + shift i
-
-```bash
-tmux source-file ~/.tmux.conf
-```
-
----
-
-## _Asignar un tema a la bash (oh my posh)_
-
-```bash
-set $TERM=xterm-256color
-```
-
-```bash
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
-brew update && brew upgrade oh-my-posh
-```
-
-```bash
-mkdir .poshthemes
-nvim YOURTHEME.omp.json
-```
-
-- ### Pegar el json del tema escogido de oh my posh
-- ### Añadir en el archivo .bashrc la siguiente linea
-
-```bash
-eval "$(oh-my-posh init bash --config ~/.poshthemes/YOURTHEME.omp.json)"
-```
-
-```bash
-sudo apt install hstr
-hstr --show-configuration >> ~/.bashrc
-```
-
----
-
-## _En caso de que hstr y el tema de oh my posh no funcionen_
-
-```bash
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(oh-my-posh init bash --config ~/.poshthemes/YOURTHEME.omp.json)"
-
-alias hh=hstr
-export HSTR*CONFIG=hicolor,hide-help
-shopt -s histappend
-export HISTCONTROL=ignorespace
-export HISTFILESIZE=10000
-export HISTSIZE=${HISTFILESIZE}
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
-if [[$- =~ .\_i.*]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
-```
-
----
-
-## _Cambiar terminar por defecto al abrir wsl_
-
-```bash
-sudo vim /etc/passwd
-```
-
-_Añadir la siguiente ruta para reemplazar la terminal por defecto con TMUX_
-
-- /usr/bin/tmux
-
----
-
-## _Clonar mi configuración de nvim_
-
-```bash
-git clone https://github.com/Jufedev/nvim ~/.config/
-```
-
----
-
-## _Dependencias para desarrollo con js_
-
-```bash
-brew install node
-brew install npm
-```
 
 ## _Dependencias para probar apis por consola_
 
