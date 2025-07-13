@@ -37,7 +37,4 @@ source ~/.bashrc
 
 ## _Dependencias para probar apis por consola_
 
-```bash
-brew install httpie
-brew upgrade httpie
-```
+- httpie
