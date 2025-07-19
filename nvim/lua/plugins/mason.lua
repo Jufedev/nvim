@@ -22,7 +22,7 @@ return {
         "ts_ls",
         "dockerls",
         "lua_ls",
-        "json_ls",
+        "jsonls",
       },
     })
 
