@@ -38,3 +38,7 @@ source ~/.bashrc
 ## _Dependencias para probar apis por consola_
 
 - httpie
+- 
+```bash
+export PATH="$HOME/.local/node-20/bin:$HOME/.bun/bin:$PATH"
+```
