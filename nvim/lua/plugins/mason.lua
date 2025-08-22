@@ -23,6 +23,7 @@ return {
         "dockerls",
         "lua_ls",
         "jsonls",
+        "terraformls",
       },
     })
 
@@ -33,6 +34,7 @@ return {
         "autopep8",
         "flake8",
         "eslint_d",
+        "tflint",
       },
       automatic_installation = true,
     })

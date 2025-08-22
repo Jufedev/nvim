@@ -9,6 +9,15 @@ return {
     local lspconfig = require("lspconfig")
     local caps = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+    lspconfig.terraformls.setup {
+      capabilities = capabilities,
+      settings = {
+        terraform = {
+          ignoreSingleFileWarning = true
+        }
+      }
+    }
+
     local function on_attach(_, bufnr)
       local km = vim.keymap.set
       km("n", "<leader>H", vim.lsp.buf.hover, { buffer = bufnr, desc = "LSP: Hover" })
@@ -28,6 +37,7 @@ return {
       "dockerls",
       "jsonls",
       "lua_ls",
+      "terraformls",
     }
 
     for _, name in ipairs(servers) do
