@@ -7,7 +7,11 @@ return {
   config = function()
     require("mason").setup({
       ui = {
-        icons = { package_installed = "✓", package_pending = "➜", package_uninstalled = "✗" },
+        icons = {
+          package_installed   = "✓",
+          package_pending     = "➜",
+          package_uninstalled = "✗",
+        },
       },
     })
 
@@ -24,7 +28,9 @@ return {
         "lua_ls",
         "jsonls",
         "terraformls",
+        "astro",
       },
+      automatic_installation = true,
     })
 
     require("mason-tool-installer").setup({
