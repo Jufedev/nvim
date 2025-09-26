@@ -2,18 +2,26 @@ local function map(mode, lhs, rhs)
   vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")        -- Mover areas sombreada abajo
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")        -- Mover areas sombreada arriba
+map("v", "J", ":m '>+1<CR>gv=gv")        -- Mover areas sombreada abajo
+map("v", "K", ":m '<-2<CR>gv=gv")        -- Mover areas sombreada arriba
 
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>") -- Clear search
+map("n", "<leader>h", ":nohlsearch<CR>") -- Clear search
 
-vim.keymap.set("n", "<leader>ff", function()
+map("n", "<leader>cdl", function()
+  vim.diagnostic.setloclist()
+end)
+
+map("n", "<leader>cd", function()
+  vim.diagnostic.open_float()
+end)
+
+map("n", "<leader>ff", function()
   Snacks.picker.files()
-end, { desc = "Buscar archivos" })
+end)
 
-vim.keymap.set("n", "<leader>cf", function()
+map("n", "<leader>cf", function()
   vim.lsp.buf.format()
-end, { silent = true, desc = "Formatear archivo con LSP" })
+end)
 
 -- Save
 map("n", "<leader>w", "<CMD>update<CR>")
