@@ -1,48 +1,47 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
   },
-  config = function()
-    require("mason").setup({
-      ui = {
-        icons = {
-          package_installed   = "✓",
-          package_pending     = "➜",
-          package_uninstalled = "✗",
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "pyright",     -- Python
+          "gopls",       -- Go
+          "terraformls", -- Terraform
+          "lua_ls",      -- Lua
+          "html",        -- HTML
+          "cssls",       -- CSS
+          "tailwindcss", -- Tailwind
+          "ts_ls",       -- TypeScript/JavaScript
+          "yamlls",      -- YAML
+          "jsonls",      -- JSON
+          "marksman",    -- Markdown
+          "astro",       -- Astro
         },
-      },
-    })
-
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "html",
-        "cssmodules_ls",
-        "css_variables",
-        "pyright",
-        "csharp_ls",
-        "angularls",
-        "ts_ls",
-        "dockerls",
-        "lua_ls",
-        "jsonls",
-        "terraformls",
-        "astro",
-      },
-      automatic_installation = true,
-    })
-
-    require("mason-tool-installer").setup({
-      ensure_installed = {
-        "prettier",
-        "stylua",
-        "autopep8",
-        "flake8",
-        "eslint_d",
-        "tflint",
-      },
-      automatic_installation = true,
-    })
-  end,
+      })
+    end,
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          "black", "isort", "pylint", "mypy", -- Python
+          "gofumpt", "golangci-lint",         -- Go
+          "tflint",                           -- Terraform
+          "stylua", "luacheck",               -- Lua
+          "prettier", "eslint_d",             -- HTML/CSS/TS/JS
+          "yamlfmt", "yamllint",              -- YAML
+          "jq", "jsonlint",                   -- JSON
+          "markdownlint",                     -- Markdown
+        },
+      })
+    end,
+  },
 }
