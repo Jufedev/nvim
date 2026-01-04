@@ -15,7 +15,7 @@ append_once() {
 pacman -Syu --noconfirm
 
 #Dependencies
-pacman -Syu --noconfirm tmux git curl fzf python npm go docker terraform unzip
+pacman -Syu --noconfirm tmux git curl fzf python npm go docker terraform unzip patch base-devel
 
 #pyenv setup
 git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
