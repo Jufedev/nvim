@@ -15,7 +15,7 @@ append_once() {
 pacman -Syu --noconfirm
 
 #Dependencies
-pacman -Syu --noconfirm tmux git curl fzf python npm go docker terraform unzip zed
+pacman -Syu --noconfirm tmux git curl fzf python npm go docker terraform unzip
 
 #pyenv setup
 git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"
@@ -52,12 +52,6 @@ append_once "$BASHRC" '# Asocia Ctrl-R a __fzf_history__ en shells interactivas'
 append_once "$BASHRC" 'if [[ $- == *i* ]]; then'
 append_once "$BASHRC" '  bind -x "\"\C-r\": \"__fzf_history__\"\""'
 append_once "$BASHRC" 'fi'
-
-
-#Install Zed as root, set env to allow
-append_once "$BASHRC" ''
-append_once "$BASHRC" 'export ZED_ALLOW_ROOT=true'
-curl -fsSL https://zed.dev/install.sh | bash
 
 #Change default shell to tmux
 sed -i 's|^\(root:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:\)/usr/bin/bash$|\1/usr/bin/tmux|' /etc/passwd
